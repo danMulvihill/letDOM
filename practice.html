@@ -14,19 +14,45 @@
     </style>
 </head>
 <body>
-    <div id="container">This is a container</div>
+    <div id="container">
+        Hello <span id="greeting"></span>! 
+        <!-- <input id="maxbox"> -->
+    </div>
+    
 
     <script>
         var div,
             container = document.getElementById('container');
+
+        let maxBox = prompt("How many boxes would you like?");
+        let maxbox = document.getElementById("maxbox");
         
-        for (let i=0; i<5; i++){
+        for (let i=0; i<maxBox; i++){
             div = document.createElement('div');
             div.onclick = function(){
                 alert(`You clicked box #${i}`);
             }
             container.appendChild(div);
         }
+
+        //desctructing practice:
+
+        const defaultChar= {
+            firstName: "Steve",
+            lastName: "Lamb",
+            jobs: ["miner", "farmer"],
+            loc: ["Canterbury"]
+
+        }
+
+    
+
+        let title = (p=defaultChar) => `Lord ${p.firstName} of ${p.loc}`
+        
+
+        //let title = (p=defaultChar) => `Lord ${p.firstName} of ${p.loc}`;
+
+        document.querySelector("#greeting").textContent = title();
         
         </script>
 </body>
