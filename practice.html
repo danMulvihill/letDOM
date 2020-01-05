@@ -35,7 +35,7 @@
             container.appendChild(div);
         }
 
-        //desctructing practice:
+        //desctructing/arrow functions, default parameter practice:
 
         const defaultChar= {
             firstName: "Steve",
@@ -44,10 +44,10 @@
             loc: ["Canterbury"]
 
         }
-
+        var {firstName, loc} = defaultChar;
     
 
-        let title = (p=defaultChar) => `Lord ${p.firstName} of ${p.loc}`
+        let title = (n=firstName, l=loc) => `Lord ${n} of ${l}`
         
 
         //let title = (p=defaultChar) => `Lord ${p.firstName} of ${p.loc}`;
