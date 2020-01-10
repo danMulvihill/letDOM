@@ -9,13 +9,21 @@
         div {
             background-color: aqua;
             border: 3px solid black;
-            height: 25px;
+            
         }
+        #container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        /* #container div{
+            content: "BOX";
+        } */
     </style>
 </head>
 <body>
+    <div>Hello <span id="greeting"></span></div>
     <div id="container">
-        Hello <span id="greeting"></span>! 
         <!-- <input id="maxbox"> -->
     </div>
     
@@ -32,6 +40,7 @@
             div.onclick = function(){
                 alert(`You clicked box #${i}`);
             }
+            div.textContent = "Box #"+i;
             container.appendChild(div);
         }
 
