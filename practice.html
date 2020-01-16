@@ -11,11 +11,20 @@
             border: 3px solid black;
             
         }
-        #container{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+
+        @media (min-width: 400px){
+            #container{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-around;
+                align-content: space-around;
+                /* align-items: flex-end; */
+                width: 75wv;
+            }
         }
+
+
         /* #container div{
             content: "BOX";
         } */
@@ -31,7 +40,8 @@
     <script>
         var div,
             container = document.getElementById('container');
-
+        var firstName = prompt("What's your name?");
+        var loc = prompt("Where are you from?");
         let maxBox = prompt("How many boxes would you like?");
         let maxbox = document.getElementById("maxbox");
         
@@ -44,23 +54,23 @@
             container.appendChild(div);
         }
 
-        if (maxBox>10){
-            container.style.flexWrap = "wrap";
-        }
+        // if (maxBox>10){
+        //     container.style.flexWrap = "wrap";
+        // }
 
         //desctructing/arrow functions, default parameter practice:
 
+if(!firstName){
         const defaultChar= {
             firstName: "Steve",
             lastName: "Lamb",
             jobs: ["miner", "farmer", "blacksmith"],
             loc: ["Canterbury"]
-
         }
         var {firstName, loc} = defaultChar;
-    
+}
 
-        let title = (n=firstName, l=loc) => `Lord ${n} of ${l}`
+        let title = (n=firstName, l=loc) => `${n} of ${l}`
         
 
         //let title = (p=defaultChar) => `Lord ${p.firstName} of ${p.loc}`;
